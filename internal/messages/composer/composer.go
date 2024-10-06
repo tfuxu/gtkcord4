@@ -381,7 +381,7 @@ func (v *View) upload() {
 	d.OpenMultiple(v.ctx, app.GTKWindowFromContext(v.ctx), func(async gio.AsyncResulter) {
 		files, err := d.OpenMultipleFinish(async)
 		if err != nil {
-			slog.Error("failed to open a file", "glib_error_msg", err)
+			slog.Error("an error occurred in composer file dialog", "error_msg", err)
 			return
 		}
 		v.addFiles(files)
